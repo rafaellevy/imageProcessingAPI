@@ -1,5 +1,5 @@
 // import express library
-const express = require("express");
+import express from "express";
 const apiRoutes = require("./api");
 
 // bring a property from express
@@ -9,4 +9,6 @@ const Router = express.Router;
 const router = Router();
 
 router.use("/api", apiRoutes);
-module.exports = router;
+
+// module.exports = router;
+export default router;
