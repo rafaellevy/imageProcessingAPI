@@ -10,6 +10,6 @@ app.get("*", (req, res) => {
   res.status(404).send("Page Not Found");
 });
 
-app.listen(5000, () => {
-  console.log("Listening on port 5000");
+app.listen(3000, () => {
+  console.log("Listening on port 3000");
 });
