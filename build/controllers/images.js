@@ -14,7 +14,7 @@ exports.default = {
         // find method takes a predicate ( it's a call back function)
         var cacheEntry = cache.find(function (entry) { return entry.key === "" + filename + height + width; });
         if (cacheEntry) {
-            res.send(cacheEntry.buffer);
+            res.status(200).send(cacheEntry.buffer);
             console.log("Hit the cache");
             return;
         }
@@ -26,7 +26,7 @@ exports.default = {
                 .resize(Number(width), Number(height))
                 .toBuffer()
                 .then(function (img) {
-                res.send(img);
+                res.status(201).send(img);
                 // dynamic key
                 // cache[`${filename}${height}${width}`] = img;
                 cache.push({

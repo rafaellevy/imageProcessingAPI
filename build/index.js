@@ -14,3 +14,7 @@ app.get("*", function (req, res) {
 app.listen(3000, function () {
     console.log("Listening on port 3000");
 });
+var myFunc = function (num) {
+    return num * num;
+};
+exports.default = myFunc;

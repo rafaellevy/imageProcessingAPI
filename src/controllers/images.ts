@@ -19,7 +19,7 @@ export default {
       (entry) => entry.key === `${filename}${height}${width}`
     );
     if (cacheEntry) {
-      res.send(cacheEntry.buffer);
+      res.status(200).send(cacheEntry.buffer);
       console.log("Hit the cache");
       return;
     }
@@ -31,7 +31,7 @@ export default {
         .resize(Number(width), Number(height))
         .toBuffer()
         .then((img: Buffer) => {
-          res.send(img);
+          res.status(201).send(img);
           // dynamic key
           // cache[`${filename}${height}${width}`] = img;
           cache.push({
